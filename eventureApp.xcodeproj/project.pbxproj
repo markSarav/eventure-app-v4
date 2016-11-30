@@ -32,6 +32,8 @@
 		76A083C21DBC013700DBC5A2 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A083C11DBC013700DBC5A2 /* LoggedInViewController.swift */; };
 		76A083C41DBC183E00DBC5A2 /* DBAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A083C31DBC183E00DBC5A2 /* DBAccessObject.swift */; };
 		76AA56C61DBC2B4A00EE90FF /* DBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA56C51DBC2B4A00EE90FF /* DBViewController.swift */; };
+		A7D1F8FD1DEE5F53000BAABD /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D1F8FC1DEE5F53000BAABD /* EditProfileViewController.swift */; };
+		A7D1F8FF1DEE607E000BAABD /* default_avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A7D1F8FE1DEE607E000BAABD /* default_avatar.jpg */; };
 		A7E6BD0BC443562A75605052 /* Pods_eventureApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFCB81741DB73DB7E88BF2A /* Pods_eventureApp.framework */; };
 		A938EE5A1DDBF334006A51F5 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A938EE591DDBF334006A51F5 /* SearchCell.swift */; };
 		A938EE5C1DDBF46A006A51F5 /* EventsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A938EE5B1DDBF46A006A51F5 /* EventsProfileViewController.swift */; };
@@ -67,6 +69,8 @@
 		76A083C11DBC013700DBC5A2 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		76A083C31DBC183E00DBC5A2 /* DBAccessObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBAccessObject.swift; sourceTree = "<group>"; };
 		76AA56C51DBC2B4A00EE90FF /* DBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBViewController.swift; sourceTree = "<group>"; };
+		A7D1F8FC1DEE5F53000BAABD /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		A7D1F8FE1DEE607E000BAABD /* default_avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_avatar.jpg; sourceTree = "<group>"; };
 		A938EE591DDBF334006A51F5 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		A938EE5B1DDBF46A006A51F5 /* EventsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsProfileViewController.swift; sourceTree = "<group>"; };
 		A953ECBD1DCA6CAF0043D652 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		761BA20E1DDCFCAC006311CC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A7D1F8FE1DEE607E000BAABD /* default_avatar.jpg */,
 				7620C0ED1DD66D6100D594E9 /* recreation.png */,
 				7620C0F51DD66E0600D594E9 /* charitables.png */,
 				7620C0F11DD66D8400D594E9 /* food.png */,
@@ -158,6 +163,7 @@
 				A938EE5B1DDBF46A006A51F5 /* EventsProfileViewController.swift */,
 				A953ECBD1DCA6CAF0043D652 /* SearchViewController.swift */,
 				7656A3F31DEE44CB00054C7F /* EventSignUpViewController.swift */,
+				A7D1F8FC1DEE5F53000BAABD /* EditProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				7620C0F21DD66D8400D594E9 /* food.png in Resources */,
 				76A083C01DBBFA0B00DBC5A2 /* river.jpeg in Resources */,
 				76A083A51DBBF73B00DBC5A2 /* Main.storyboard in Resources */,
+				A7D1F8FF1DEE607E000BAABD /* default_avatar.jpg in Resources */,
 				7620C0F01DD66D7000D594E9 /* business.png in Resources */,
 				7620C0EE1DD66D6100D594E9 /* recreation.png in Resources */,
 				7620C0F61DD66E0600D594E9 /* charitables.png in Resources */,
@@ -399,6 +406,7 @@
 				76A083A21DBBF73B00DBC5A2 /* ViewController.swift in Sources */,
 				A938EE5C1DDBF46A006A51F5 /* EventsProfileViewController.swift in Sources */,
 				7646BFBA1DC0570000CB7CF8 /* MapViewController.swift in Sources */,
+				A7D1F8FD1DEE5F53000BAABD /* EditProfileViewController.swift in Sources */,
 				765A7F441DCA4F64000C27EE /* MapContainerViewController.swift in Sources */,
 				76A083BD1DBBF9ED00DBC5A2 /* Message.swift in Sources */,
 				7656A3F41DEE44CB00054C7F /* EventSignUpViewController.swift in Sources */,
