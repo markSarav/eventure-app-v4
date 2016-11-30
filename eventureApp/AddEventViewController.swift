@@ -82,7 +82,7 @@ class AddEventViewController: UIViewController {
                                             let db = DBAccessObject(DBAccessObj: ref)
                                             
                                             // add the event to the database.
-                                            db.addEventTreeStructure(eventRoot: "Events", title:
+                                            db.addEventTreeStructure(eventRoot: "Events",attendees: [], title:
                                                 self.titleText.text!, description: self.descriptionText.text!, avatar: "",Category: self.category.text!, chatChannel: 0, images: [], startDate: self.startDate.text!, endDate: self.endDate.text!, longitude: longitude, latitude: latitude)
                                             
                                             

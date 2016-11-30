@@ -15,18 +15,6 @@ class EventSignUpViewController: UIViewController {
         super.viewDidLoad()
 
         
-        // listen to the database and add the current user to the events attendees list.
-        
-        var ref: FIRDatabaseReference!
-        ref = FIRDatabase.database().reference()
-        
-        // select the attendees child
-        var eventRef = ref.child("Events").childByAutoId().key
-        
-        
-        
-        
-        
         
     }
 
