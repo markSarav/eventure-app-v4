@@ -20,7 +20,6 @@
 		765A7F471DCAC222000C27EE /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A7F461DCAC222000C27EE /* AddEventViewController.swift */; };
 		76A083A01DBBF73B00DBC5A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0839F1DBBF73B00DBC5A2 /* AppDelegate.swift */; };
 		76A083A21DBBF73B00DBC5A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A083A11DBBF73B00DBC5A2 /* ViewController.swift */; };
-		76A083A51DBBF73B00DBC5A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A083A31DBBF73B00DBC5A2 /* Main.storyboard */; };
 		76A083A71DBBF73B00DBC5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A083A61DBBF73B00DBC5A2 /* Assets.xcassets */; };
 		76A083AA1DBBF73B00DBC5A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A083A81DBBF73B00DBC5A2 /* LaunchScreen.storyboard */; };
 		76A083B31DBBF7E300DBC5A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76A083B21DBBF7E300DBC5A2 /* GoogleService-Info.plist */; };
@@ -37,6 +36,7 @@
 		A7E6BD0BC443562A75605052 /* Pods_eventureApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFCB81741DB73DB7E88BF2A /* Pods_eventureApp.framework */; };
 		A938EE5A1DDBF334006A51F5 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A938EE591DDBF334006A51F5 /* SearchCell.swift */; };
 		A938EE5C1DDBF46A006A51F5 /* EventsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A938EE5B1DDBF46A006A51F5 /* EventsProfileViewController.swift */; };
+		A93C71DB1DF0AE2700187BF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93C71DA1DF0AE2700187BF8 /* Main.storyboard */; };
 		A953ECBE1DCA6CAF0043D652 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A953ECBD1DCA6CAF0043D652 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,6 @@
 		76A0839C1DBBF73B00DBC5A2 /* eventureApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventureApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A0839F1DBBF73B00DBC5A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76A083A11DBBF73B00DBC5A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		76A083A41DBBF73B00DBC5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		76A083A61DBBF73B00DBC5A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76A083A91DBBF73B00DBC5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76A083AB1DBBF73B00DBC5A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		A7D1F8FE1DEE607E000BAABD /* default_avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_avatar.jpg; sourceTree = "<group>"; };
 		A938EE591DDBF334006A51F5 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		A938EE5B1DDBF46A006A51F5 /* EventsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsProfileViewController.swift; sourceTree = "<group>"; };
+		A93C71DA1DF0AE2700187BF8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A953ECBD1DCA6CAF0043D652 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AB149FF1214CD90EBC2AFCA5 /* Pods-eventureApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventureApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventureApp/Pods-eventureApp.release.xcconfig"; sourceTree = "<group>"; };
 		AFFCB81741DB73DB7E88BF2A /* Pods_eventureApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eventureApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,7 +207,6 @@
 		76A0839E1DBBF73B00DBC5A2 /* eventureApp */ = {
 			isa = PBXGroup;
 			children = (
-				76A083A31DBBF73B00DBC5A2 /* Main.storyboard */,
 				3C9F39D91DDC209400804A55 /* Chat */,
 				761BA2101DDCFCE6006311CC /* Table Cells */,
 				761BA20F1DDCFCC8006311CC /* ViewControllers */,
@@ -219,6 +218,7 @@
 				76A083B11DBBF78C00DBC5A2 /* eventureApp.entitlements */,
 				76A0839F1DBBF73B00DBC5A2 /* AppDelegate.swift */,
 				76A083A61DBBF73B00DBC5A2 /* Assets.xcassets */,
+				A93C71DA1DF0AE2700187BF8 /* Main.storyboard */,
 				76A083A81DBBF73B00DBC5A2 /* LaunchScreen.storyboard */,
 				76A083B21DBBF7E300DBC5A2 /* GoogleService-Info.plist */,
 				76A083AB1DBBF73B00DBC5A2 /* Info.plist */,
@@ -331,11 +331,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				76A083B31DBBF7E300DBC5A2 /* GoogleService-Info.plist in Resources */,
+				A93C71DB1DF0AE2700187BF8 /* Main.storyboard in Resources */,
 				76A083AA1DBBF73B00DBC5A2 /* LaunchScreen.storyboard in Resources */,
 				76A083A71DBBF73B00DBC5A2 /* Assets.xcassets in Resources */,
 				7620C0F21DD66D8400D594E9 /* food.png in Resources */,
 				76A083C01DBBFA0B00DBC5A2 /* river.jpeg in Resources */,
-				76A083A51DBBF73B00DBC5A2 /* Main.storyboard in Resources */,
 				A7D1F8FF1DEE607E000BAABD /* default_avatar.jpg in Resources */,
 				7620C0F01DD66D7000D594E9 /* business.png in Resources */,
 				7620C0EE1DD66D6100D594E9 /* recreation.png in Resources */,
@@ -424,14 +424,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		76A083A31DBBF73B00DBC5A2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				76A083A41DBBF73B00DBC5A2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		76A083A81DBBF73B00DBC5A2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -18,7 +18,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func submit(_ sender: Any) {
         let storageRef = FIRStorage.storage().reference().child("avatar.png")
-        
+        //let someRandomeImageName = FIRStorage.storage().reference()
+
         if let uploadData = UIImagePNGRepresentation(imageView.image!) {
             storageRef.put(uploadData, metadata: nil)
             storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in

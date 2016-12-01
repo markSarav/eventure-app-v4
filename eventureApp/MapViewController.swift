@@ -54,18 +54,18 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: AnyObject) {
+        let firebaseUser = FIRAuth.auth()
         
-        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
-            if let user = user {
-                do {
-                    try! FIRAuth.auth()!.signOut()
-                }
-                catch let signoutError as NSError {
-                    print ("Error signing out \(signoutError)")
-                }
-            } else {
-                // No user is signed in.
-            }
+        do {
+            try firebaseUser!.signOut()
+            
+            //Send the user back to login screen after logging out
+            let loginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
+                present(loginVC, animated: true, completion: nil)
+            
+            
+        } catch let signoutError as NSError {
+            print ("Error signing out \(signoutError)")
         }
         
     }

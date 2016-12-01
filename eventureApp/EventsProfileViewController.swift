@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseDatabase
 
 class EventsProfileViewController: UIViewController {
@@ -16,10 +17,17 @@ class EventsProfileViewController: UIViewController {
     @IBOutlet var eventCategory: UILabel!
     
     var eventId: String!
+    var myUserId = FIRAuth.auth()?.currentUser?.uid
     
+    @IBAction func signUpForEvent(_ sender: Any) {
+        addMyselfToEvent(withEventId: eventId)
+        
+        // Programmatically perform segue. in case the sign up was unsuccessful.
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,6 +51,15 @@ class EventsProfileViewController: UIViewController {
             self.eventCategory.text = eventCategory
         })
         
+    }
+    
+    
+    
+    func addMyselfToEvent(withEventId eventId: String) {
+        //Grabes current event by ID then adds the current user into the attendees list.
+        FIRDatabase.database().reference().child("Events").child(eventId).child("attendees").child(myUserId!).setValue(true)
+        // After function is ran the segue will execute progromatticly
+        self.performSegue(withIdentifier: "SignupSuccessSegue", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {

@@ -22,6 +22,10 @@ class MapContainerViewController: UIViewController, CLLocationManagerDelegate {
         // PRINT CURRENT USER
         print("THE CURRENT USER IS: " + (FIRAuth.auth()?.currentUser?.email)!)
         
+        
+        print("Choosing a random number or name for file.... \(NSUUID().uuidString)")
+        
+        
         // set the orientation and view of the map.
         var camera = GMSCameraPosition.camera(withLatitude: 40.7128, longitude: -74.0059, zoom: 13)
         var mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)

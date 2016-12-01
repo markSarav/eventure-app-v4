@@ -26,17 +26,24 @@ class ViewController: UIViewController {
         // log in a already registered user
         FIRAuth.auth()?.signIn(withEmail: email.text!, password: password.text!) {
             (user, error) in
+            /*
+            if let err = error {
+                
+            }
+            */
             if error != nil {
                 print("Error logging user")
                 print(error.debugDescription)
                 return
             }
+            
             print("Logged in \(user?.email)")
             self.email.text = ""
             self.password.text = ""
             
             
-            // redirect to loggedInViewController
+            // redirect to loggedInViewController... programmatically...
+            self.performSegue()
             
         }
         
@@ -44,6 +51,14 @@ class ViewController: UIViewController {
         
         
     }
+    
+    
+    //Handles segue actions for both login and register.
+    private func performSegue() {
+        self.performSegue(withIdentifier: "authenticationSegue", sender: nil)
+    }
+    
+    
     
     // add to database
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
@@ -55,8 +70,7 @@ class ViewController: UIViewController {
         FIRAuth.auth()?.createUser(withEmail: email.text!, password: password.text! ) {
             (user, error) in
             if error != nil {
-                print("Error registering user")
-                print(error.debugDescription)
+                print("Error registering user... \(error.debugDescription)")
                 return
             }
             print("created a user with email: \(user?.email)")
@@ -72,6 +86,7 @@ class ViewController: UIViewController {
                     userKey.child("email").setValue(user.email)
                 }
             }
+            self.performSegue()
         }
     }
 

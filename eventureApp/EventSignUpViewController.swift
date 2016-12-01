@@ -11,6 +11,15 @@ import FirebaseDatabase
 
 class EventSignUpViewController: UIViewController {
 
+    @IBAction func backToHomeScreen(_ sender: Any) {
+    
+        //Grabs the main viewcontroller and presents it when the "Home" button is pressed.
+        let homeViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewVC")
+        self.present(homeViewController, animated: true, completion: nil)
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

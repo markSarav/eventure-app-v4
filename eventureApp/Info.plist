@@ -41,12 +41,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationWhenInUsageDescription</key>
-	<string>By enabling this, you can have the app access your current location.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Eventure would like to access your location.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Eventure would like access to your photo library so you can upload a profile picture.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
