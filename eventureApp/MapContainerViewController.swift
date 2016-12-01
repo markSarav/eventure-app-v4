@@ -26,8 +26,22 @@ class MapContainerViewController: UIViewController, CLLocationManagerDelegate {
         print("Choosing a random number or name for file.... \(NSUUID().uuidString)")
         
         
+        // gets the users current location and uses it to set coordinates for the map.
+        let locationManager = CLLocationManager()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
+         var locationValue = locationManager.location?.coordinate
+        
+        
         // set the orientation and view of the map.
-        var camera = GMSCameraPosition.camera(withLatitude: 40.7128, longitude: -74.0059, zoom: 13)
+        var camera = GMSCameraPosition.camera(withLatitude: (locationValue?.latitude)!, longitude: (locationValue?.longitude)!, zoom: 13)
         var mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.isMyLocationEnabled = true
         
