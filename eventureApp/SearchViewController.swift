@@ -73,7 +73,7 @@ class SearchViewController: UITableViewController {
     func filterContent(searchText: String) {
         
         self.filteredEvents = self.eventsArray.filter({ (event) -> Bool in
-            return event.title_text.lowercased().contains(searchText.lowercased())
+            return event.eventTitle.lowercased().contains(searchText.lowercased())
         })
         
         //        self.filteredEvents = self.eventsArray.filter{ (event) -> Bool in

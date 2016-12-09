@@ -16,25 +16,39 @@ import Foundation
 class Event {
     
     // instance variables for initializer
-    let created: String!
+    let dateCreated: String!
     let event_id: String!
-    var avatar_img: String!
-    let channelNum: Int!
+    let avatar_img: String!
+    let chatChannel: Int!
     //    var icon_img: String
-    var event_images: String! //Change this to array later
-    var event_category: String!
+    let eventImage: String! //Change this to array later
+    let eventCategory: String!
     //    let host_id: String  // this will be firstbase uid
-    var title_text: String!
+    let eventTitle: String!
+    let eventDescription: String!
+    let eventDate: String!
+    let eventTime: String!
+    let eventHost: String! // Needs to be changed.
+    let eventLocationAddress: String!
+    let eventPlaceName: String!
+    
+    
     
     // define an initializer for Event objects
     init(eventKey: String, snapshot: Dictionary<String, AnyObject>) {
         self.event_id = eventKey
-        self.created = snapshot["dateCreated"] as? String
-        self.event_category = snapshot["category"] as? String
-        self.title_text = snapshot["title"] as? String
+        self.dateCreated = snapshot["dateCreated"] as? String
+        self.eventCategory = snapshot["category"] as? String
+        self.eventTitle = snapshot["title"] as? String
         self.avatar_img = snapshot["avatar"] as? String
-        self.channelNum = snapshot["chatChannel"] as? Int
-        self.event_images = snapshot["images"] as? String
+        self.chatChannel = snapshot["chatChannel"] as? Int
+        self.eventImage = snapshot["eventImage"] as? String
+        self.eventDescription = snapshot["eventDescription"] as? String
+        self.eventDate = snapshot["eventDate"] as? String
+        self.eventTime = snapshot["eventTime"] as? String
+        self.eventLocationAddress = snapshot["eventLocationAddress"] as? String
+        self.eventPlaceName = snapshot["eventPlaceName"] as? String
+        self.eventHost = snapshot["eventHost"] as? String // this needs to be set at time of creation by grabbing currrent users name
         
         
     }

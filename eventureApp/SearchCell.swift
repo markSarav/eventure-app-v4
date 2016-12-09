@@ -23,7 +23,7 @@ class SearchCell: UITableViewCell {
     }
 
     func configureCell(event: Event) {
-        self.title.text = event.title_text
+        self.title.text = event.eventTitle
         //change this to what ever data i want viewed.
     }
     
