@@ -20,19 +20,32 @@ import FirebaseAuth
 import Foundation
 
 class DBAccessObject {
-        
+    
     var DBReference: FIRDatabaseReference
     
-    var storageref: FIRStorageReference{
+    init(DBAccessObj: FIRDatabaseReference) {
+        // creates a reference to access the database
+        self.DBReference = DBAccessObj.database.reference()
+    }
+    
+    private var roomref = FIRDatabase.database().reference()
+    var roomRef: FIRDatabaseReference{
+        return roomref
+    }
+    private var storageref: FIRStorageReference{
         return FIRStorage.storage().reference()
     }
     
+    
+    
     var fileURL: String!
+    
+
     
     func CreateNewRoom(user: FIRUser, caption: String, data: NSData){
         let filePath = "\(user.uid)/\(Int(NSDate.timeIntervalSinceReferenceDate))"
         let metaData = FIRStorageMetadata()
-        metaData.contentType = "image/jpg"
+        metaData.contentType = "image/png"
         storageref.child(filePath).put(data as Data, metadata: metaData) { (metadata, error) in
             if let error = error {
                 print("Error uploading:")
@@ -41,18 +54,18 @@ class DBAccessObject {
             self.fileURL = metadata!.downloadURLs![0].absoluteString
             if let user = FIRAuth.auth()?.currentUser {
                 let idRoom = self.DBReference.child("rooms").childByAutoId()
-                idRoom.setValue(["caption": caption])
+                idRoom.setValue(["caption": caption, "thumbnailURLFromStorage":self.DBReference.child(metadata!.path!).description(),"fileUrl":self.fileURL])
             }
         }
     }
     
-    init(DBAccessObj: FIRDatabaseReference) {
-        
-        // creates a reference to access the database
-        
-        self.DBReference = DBAccessObj.database.reference()
-        
-        
+    func fetchDataFromServer(callback: @escaping (Room) -> ()) {
+        let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+        let db = DBAccessObject(DBAccessObj: ref)
+        db.roomRef.observe(.childAdded, with: { (snapshot) in
+            let room = Room(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>)
+            callback(room)
+        })
     }
 
     // adds an event to the db

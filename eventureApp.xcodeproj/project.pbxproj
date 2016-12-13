@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C7FBB2E1DFFC36B00950824 /* RoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FBB2D1DFFC36B00950824 /* RoomCollectionViewCell.swift */; };
+		3C7FBB301DFFC4C700950824 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FBB2F1DFFC4C700950824 /* Room.swift */; };
 		3CD358551DFB31D500F54C31 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD358541DFB31D500F54C31 /* ChatViewController.swift */; };
 		3CD3585B1DFB44F600F54C31 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3585A1DFB44F600F54C31 /* AppState.swift */; };
 		3CD3585D1DFB463E00F54C31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3585C1DFB463E00F54C31 /* Constants.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C7FBB2D1DFFC36B00950824 /* RoomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCollectionViewCell.swift; sourceTree = "<group>"; };
+		3C7FBB2F1DFFC4C700950824 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		3CD358541DFB31D500F54C31 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3CD3585A1DFB44F600F54C31 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		3CD3585C1DFB463E00F54C31 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			children = (
 				3CD3585A1DFB44F600F54C31 /* AppState.swift */,
 				3CD3585C1DFB463E00F54C31 /* Constants.swift */,
+				3C7FBB2D1DFFC36B00950824 /* RoomCollectionViewCell.swift */,
+				3C7FBB2F1DFFC4C700950824 /* Room.swift */,
 				3C9F39DE1DDC216B00804A55 /* Controller */,
 			);
 			name = Chat;
@@ -121,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				3CD358541DFB31D500F54C31 /* ChatViewController.swift */,
-				3CDDA0321DFF493200EEE6B3 /* RoomCollectionViewController.swift */,
 				3CDDA0341DFF496F00EEE6B3 /* CreateRoomViewController.swift */,
+				3CDDA0321DFF493200EEE6B3 /* RoomCollectionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -178,6 +184,7 @@
 		761BA2101DDCFCE6006311CC /* Table Cells */ = {
 			isa = PBXGroup;
 			children = (
+				76A083B41DBBF9C700DBC5A2 /* Utility Classes */,
 				A938EE591DDBF334006A51F5 /* SearchCell.swift */,
 			);
 			name = "Table Cells";
@@ -221,7 +228,6 @@
 				765A7F451DCA59DE000C27EE /* Old Files */,
 				76A083BE1DBBFA0400DBC5A2 /* Images */,
 				76A083B51DBBF9D000DBC5A2 /* Data Classes */,
-				76A083B41DBBF9C700DBC5A2 /* Utility Classes */,
 				76A083B11DBBF78C00DBC5A2 /* eventureApp.entitlements */,
 				76A083A61DBBF73B00DBC5A2 /* Assets.xcassets */,
 				76A0839F1DBBF73B00DBC5A2 /* AppDelegate.swift */,
@@ -413,6 +419,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				76A083B91DBBF9E200DBC5A2 /* User.swift in Sources */,
+				3C7FBB2E1DFFC36B00950824 /* RoomCollectionViewCell.swift in Sources */,
+				3C7FBB301DFFC4C700950824 /* Room.swift in Sources */,
 				765A7F471DCAC222000C27EE /* AddEventViewController.swift in Sources */,
 				76A083BB1DBBF9E700DBC5A2 /* Chatroom.swift in Sources */,
 				A938EE5A1DDBF334006A51F5 /* SearchCell.swift in Sources */,

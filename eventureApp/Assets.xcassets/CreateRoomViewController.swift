@@ -14,8 +14,6 @@ class CreateRoomViewController: UIViewController , UIImagePickerControllerDelega
     @IBOutlet weak var captionLBL: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     
-    var selectedPhoto: UIImage?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let dismissKeyboard = UITapGestureRecognizer(target: self, action: #selector(CreateRoomViewController.dismissKeyboard))
@@ -32,8 +30,9 @@ class CreateRoomViewController: UIViewController , UIImagePickerControllerDelega
     @IBAction func CreateRoomDidTapped(_ sender: Any) {
         let ref: FIRDatabaseReference = FIRDatabase.database().reference()
         let db = DBAccessObject(DBAccessObj: ref)
-        let data: NSData = NSData()
-        db.CreateNewRoom(user: (FIRAuth.auth()!.currentUser)!, caption: captionLBL.text!, data: data)
+        var updata = UIImagePNGRepresentation(imageView.image!)
+        
+            db.CreateNewRoom(user: (FIRAuth.auth()!.currentUser)!, caption: captionLBL.text!, data: (updata as? NSData)!)
         
     }
    /* @IBAction func SelectPhotoDidTapped(_ sender: Any) {

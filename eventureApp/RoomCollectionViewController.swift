@@ -7,56 +7,59 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseStorage
+import FirebaseDatabase
 
 private let reuseIdentifier = "Cell"
 
-class RoomCollectionViewController: UICollectionViewController {
+class RoomCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
 
+    var rooms = [Room]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+        let db = DBAccessObject(DBAccessObj: ref)
+        
+        db.fetchDataFromServer { (room) in
+            self.rooms.append(room)
+            let indexPath = NSIndexPath(item: self.rooms.count - 1, section: 0)
+            self.collectionView?.insertItems(at: [indexPath as IndexPath])
+        }
+        
+        
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return rooms.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "roomCell", for: indexPath) as! RoomCollectionViewCell
+        let room = rooms[indexPath.row]
     
         // Configure the cell
+        cell.configureCell(room: room)
     
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        var width = view.frame.size.width
+        width = width/2
+        width = width - 5
+        
+        var width2 = view.frame.size.width
+        width2 = width/2
+        width2 = width2 - 5
+        
+        return CGSize(width: width, height: width2)
     }
 
     // MARK: UICollectionViewDelegate
