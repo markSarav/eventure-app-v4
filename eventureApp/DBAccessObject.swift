@@ -20,8 +20,31 @@ import FirebaseAuth
 import Foundation
 
 class DBAccessObject {
-    
+        
     var DBReference: FIRDatabaseReference
+    
+    var storageref: FIRStorageReference{
+        return FIRStorage.storage().reference()
+    }
+    
+    var fileURL: String!
+    
+    func CreateNewRoom(user: FIRUser, caption: String, data: NSData){
+        let filePath = "\(user.uid)/\(Int(NSDate.timeIntervalSinceReferenceDate))"
+        let metaData = FIRStorageMetadata()
+        metaData.contentType = "image/jpg"
+        storageref.child(filePath).put(data as Data, metadata: metaData) { (metadata, error) in
+            if let error = error {
+                print("Error uploading:")
+                return
+            }
+            self.fileURL = metadata!.downloadURLs![0].absoluteString
+            if let user = FIRAuth.auth()?.currentUser {
+                let idRoom = self.DBReference.child("rooms").childByAutoId()
+                idRoom.setValue(["caption": caption])
+            }
+        }
+    }
     
     init(DBAccessObj: FIRDatabaseReference) {
         
@@ -29,8 +52,9 @@ class DBAccessObject {
         
         self.DBReference = DBAccessObj.database.reference()
         
+        
     }
-    
+
     // adds an event to the db
     func addEventTreeStructure(eventRoot: String, attendees: NSMutableArray, title: String, description: String, avatar: String, Category: String, chatChannel: Int, images: NSMutableArray, startDate: String, endDate: String, longitude: Double, latitude: Double) {
         

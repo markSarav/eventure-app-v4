@@ -95,17 +95,6 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         
     }
     
-    @IBAction func signOut(_ sender: UIButton) {
-        let firebaseAuth = FIRAuth.auth()
-        do {
-            try firebaseAuth?.signOut()
-            AppState.sharedInstance.signedIn = false
-            dismiss(animated: true, completion: nil)
-        } catch let signOutError as NSError {
-            print ("Error signing out: \(signOutError.localizedDescription)")
-        }
-    }
-    
     func showAlert(withTitle title:String, message:String) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: title,

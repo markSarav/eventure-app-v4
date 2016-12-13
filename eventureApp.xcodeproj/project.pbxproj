@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C9F39DB1DDC20DA00804A55 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F39DA1DDC20DA00804A55 /* CreateChannelCell.swift */; };
-		3C9F39E21DDC21E000804A55 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F39E11DDC21E000804A55 /* Channel.swift */; };
-		3C9F39E41DDC255000804A55 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F39E31DDC255000804A55 /* ChannelListViewController.swift */; };
 		3CD358551DFB31D500F54C31 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD358541DFB31D500F54C31 /* ChatViewController.swift */; };
 		3CD3585B1DFB44F600F54C31 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3585A1DFB44F600F54C31 /* AppState.swift */; };
 		3CD3585D1DFB463E00F54C31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3585C1DFB463E00F54C31 /* Constants.swift */; };
+		3CDDA0331DFF493200EEE6B3 /* RoomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDDA0321DFF493200EEE6B3 /* RoomCollectionViewController.swift */; };
+		3CDDA0351DFF496F00EEE6B3 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDDA0341DFF496F00EEE6B3 /* CreateRoomViewController.swift */; };
 		7620C0EE1DD66D6100D594E9 /* recreation.png in Resources */ = {isa = PBXBuildFile; fileRef = 7620C0ED1DD66D6100D594E9 /* recreation.png */; };
 		7620C0F01DD66D7000D594E9 /* business.png in Resources */ = {isa = PBXBuildFile; fileRef = 7620C0EF1DD66D7000D594E9 /* business.png */; };
 		7620C0F21DD66D8400D594E9 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 7620C0F11DD66D8400D594E9 /* food.png */; };
@@ -50,12 +49,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3C9F39DA1DDC20DA00804A55 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
-		3C9F39E11DDC21E000804A55 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
-		3C9F39E31DDC255000804A55 /* ChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
 		3CD358541DFB31D500F54C31 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3CD3585A1DFB44F600F54C31 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		3CD3585C1DFB463E00F54C31 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3CDDA0321DFF493200EEE6B3 /* RoomCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCollectionViewController.swift; sourceTree = "<group>"; };
+		3CDDA0341DFF496F00EEE6B3 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateRoomViewController.swift; path = Assets.xcassets/CreateRoomViewController.swift; sourceTree = "<group>"; };
 		7620C0ED1DD66D6100D594E9 /* recreation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recreation.png; sourceTree = "<group>"; };
 		7620C0EF1DD66D7000D594E9 /* business.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = business.png; sourceTree = "<group>"; };
 		7620C0F11DD66D8400D594E9 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
@@ -112,36 +110,19 @@
 		3C9F39D91DDC209400804A55 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				3CD3585A1DFB44F600F54C31 /* AppState.swift */,
+				3CD3585C1DFB463E00F54C31 /* Constants.swift */,
 				3C9F39DE1DDC216B00804A55 /* Controller */,
-				3C9F39DD1DDC215E00804A55 /* Model */,
-				3C9F39DC1DDC20E200804A55 /* View */,
 			);
 			name = Chat;
-			sourceTree = "<group>";
-		};
-		3C9F39DC1DDC20E200804A55 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3C9F39DA1DDC20DA00804A55 /* CreateChannelCell.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		3C9F39DD1DDC215E00804A55 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				3C9F39E11DDC21E000804A55 /* Channel.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		3C9F39DE1DDC216B00804A55 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3C9F39E31DDC255000804A55 /* ChannelListViewController.swift */,
 				3CD358541DFB31D500F54C31 /* ChatViewController.swift */,
-				3CD3585A1DFB44F600F54C31 /* AppState.swift */,
-				3CD3585C1DFB463E00F54C31 /* Constants.swift */,
+				3CDDA0321DFF493200EEE6B3 /* RoomCollectionViewController.swift */,
+				3CDDA0341DFF496F00EEE6B3 /* CreateRoomViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -242,8 +223,8 @@
 				76A083B51DBBF9D000DBC5A2 /* Data Classes */,
 				76A083B41DBBF9C700DBC5A2 /* Utility Classes */,
 				76A083B11DBBF78C00DBC5A2 /* eventureApp.entitlements */,
-				76A0839F1DBBF73B00DBC5A2 /* AppDelegate.swift */,
 				76A083A61DBBF73B00DBC5A2 /* Assets.xcassets */,
+				76A0839F1DBBF73B00DBC5A2 /* AppDelegate.swift */,
 				A93C71DA1DF0AE2700187BF8 /* Main.storyboard */,
 				76A083A81DBBF73B00DBC5A2 /* LaunchScreen.storyboard */,
 				76A083B21DBBF7E300DBC5A2 /* GoogleService-Info.plist */,
@@ -432,23 +413,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				76A083B91DBBF9E200DBC5A2 /* User.swift in Sources */,
-				3C9F39E21DDC21E000804A55 /* Channel.swift in Sources */,
 				765A7F471DCAC222000C27EE /* AddEventViewController.swift in Sources */,
 				76A083BB1DBBF9E700DBC5A2 /* Chatroom.swift in Sources */,
 				A938EE5A1DDBF334006A51F5 /* SearchCell.swift in Sources */,
 				76A083A21DBBF73B00DBC5A2 /* ViewController.swift in Sources */,
 				3CD3585D1DFB463E00F54C31 /* Constants.swift in Sources */,
+				3CDDA0331DFF493200EEE6B3 /* RoomCollectionViewController.swift in Sources */,
 				A938EE5C1DDBF46A006A51F5 /* EventsProfileViewController.swift in Sources */,
 				7646BFBA1DC0570000CB7CF8 /* MapViewController.swift in Sources */,
+				3CDDA0351DFF496F00EEE6B3 /* CreateRoomViewController.swift in Sources */,
 				A7D1F8FD1DEE5F53000BAABD /* EditProfileViewController.swift in Sources */,
 				765A7F441DCA4F64000C27EE /* MapContainerViewController.swift in Sources */,
 				3CD358551DFB31D500F54C31 /* ChatViewController.swift in Sources */,
 				76A083BD1DBBF9ED00DBC5A2 /* Message.swift in Sources */,
 				7656A3F41DEE44CB00054C7F /* EventSignUpViewController.swift in Sources */,
-				3C9F39E41DDC255000804A55 /* ChannelListViewController.swift in Sources */,
 				A953ECBE1DCA6CAF0043D652 /* SearchViewController.swift in Sources */,
 				76AA56C61DBC2B4A00EE90FF /* DBViewController.swift in Sources */,
-				3C9F39DB1DDC20DA00804A55 /* CreateChannelCell.swift in Sources */,
 				3CD3585B1DFB44F600F54C31 /* AppState.swift in Sources */,
 				76A083B71DBBF9DC00DBC5A2 /* Event.swift in Sources */,
 				76A083C21DBC013700DBC5A2 /* LoggedInViewController.swift in Sources */,
