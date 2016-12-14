@@ -66,8 +66,23 @@ class EventsProfileViewController: UIViewController {
             let eventTitle = dictionary?["title"] as? String
             self.eventTitle.text = eventTitle
             
-            //let eventImage = dictionary?["eventImage"] as? String
-            //self.eventImage.image = eventImage
+            let eventImage = dictionary?["avatar"] as? String
+            let url = URL(string: eventImage!)
+            let urlRequest = URLRequest(url: url!)
+            let task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+                
+                if error != nil {
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    self.eventImage.image = UIImage.init(data: data!)
+                    
+                }
+                
+            })
+            task.resume()
             
             let eventDescription = dictionary?["description"] as? String
             self.eventDescription.text = eventDescription
@@ -80,6 +95,7 @@ class EventsProfileViewController: UIViewController {
             
             let eventHost = dictionary?["eventHost"] as? String
             self.eventHost.text = "Hosted by: " + eventHost!
+            
             
             let eventLocationAddress = dictionary?["eventLocationAddress"] as? String
             self.eventLocationAddress.text = eventLocationAddress
@@ -96,8 +112,12 @@ class EventsProfileViewController: UIViewController {
     func addMyselfToEvent(withEventId eventId: String) {
         //Grabes current event by ID then adds the current user into the attendees list.
         FIRDatabase.database().reference().child("Events").child(eventId).child("attendees").child(myUserId!).setValue(true)
-        // After function is ran the segue will execute progromatticly
-        self.performSegue(withIdentifier: "SignupSuccessSegue", sender: nil)
+        
+        let flashMessageController = UIAlertController(title: "Eventure", message: "Successfully Signed Up", preferredStyle: UIAlertControllerStyle.alert)
+        flashMessageController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        self.present(flashMessageController, animated: true, completion: nil)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

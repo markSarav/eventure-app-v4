@@ -14,6 +14,7 @@
 		3CD3585D1DFB463E00F54C31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3585C1DFB463E00F54C31 /* Constants.swift */; };
 		3CDDA0331DFF493200EEE6B3 /* RoomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDDA0321DFF493200EEE6B3 /* RoomCollectionViewController.swift */; };
 		3CDDA0351DFF496F00EEE6B3 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDDA0341DFF496F00EEE6B3 /* CreateRoomViewController.swift */; };
+		760975FF1E00A6D4006C246C /* eventImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 760975FE1E00A6D4006C246C /* eventImage.png */; };
 		7620C0EE1DD66D6100D594E9 /* recreation.png in Resources */ = {isa = PBXBuildFile; fileRef = 7620C0ED1DD66D6100D594E9 /* recreation.png */; };
 		7620C0F01DD66D7000D594E9 /* business.png in Resources */ = {isa = PBXBuildFile; fileRef = 7620C0EF1DD66D7000D594E9 /* business.png */; };
 		7620C0F21DD66D8400D594E9 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 7620C0F11DD66D8400D594E9 /* food.png */; };
@@ -64,6 +65,7 @@
 		3CD3585C1DFB463E00F54C31 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3CDDA0321DFF493200EEE6B3 /* RoomCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCollectionViewController.swift; sourceTree = "<group>"; };
 		3CDDA0341DFF496F00EEE6B3 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateRoomViewController.swift; path = Assets.xcassets/CreateRoomViewController.swift; sourceTree = "<group>"; };
+		760975FE1E00A6D4006C246C /* eventImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eventImage.png; sourceTree = "<group>"; };
 		7620C0ED1DD66D6100D594E9 /* recreation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recreation.png; sourceTree = "<group>"; };
 		7620C0EF1DD66D7000D594E9 /* business.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = business.png; sourceTree = "<group>"; };
 		7620C0F11DD66D8400D594E9 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		761BA20E1DDCFCAC006311CC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				760975FE1E00A6D4006C246C /* eventImage.png */,
 				A7D1F8FE1DEE607E000BAABD /* default_avatar.jpg */,
 				A91C27B51DF9F6AD0032CDCD /* hostIcon.png */,
 				A91C27BF1DFA2E8B0032CDCD /* jazzNight.png */,
@@ -201,7 +204,6 @@
 		761BA2101DDCFCE6006311CC /* Table Cells */ = {
 			isa = PBXGroup;
 			children = (
-				76A083B41DBBF9C700DBC5A2 /* Utility Classes */,
 				A938EE591DDBF334006A51F5 /* SearchCell.swift */,
 			);
 			name = "Table Cells";
@@ -238,6 +240,7 @@
 		76A0839E1DBBF73B00DBC5A2 /* eventureApp */ = {
 			isa = PBXGroup;
 			children = (
+				76A083B41DBBF9C700DBC5A2 /* Utility Classes */,
 				3C9F39D91DDC209400804A55 /* Chat */,
 				761BA2101DDCFCE6006311CC /* Table Cells */,
 				761BA20F1DDCFCC8006311CC /* ViewControllers */,
@@ -377,6 +380,7 @@
 				7620C0EE1DD66D6100D594E9 /* recreation.png in Resources */,
 				A91C27B81DF9F6AD0032CDCD /* hostIcon.png in Resources */,
 				7620C0F61DD66E0600D594E9 /* charitables.png in Resources */,
+				760975FF1E00A6D4006C246C /* eventImage.png in Resources */,
 				A91C27B91DF9F6AD0032CDCD /* locationIconPin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

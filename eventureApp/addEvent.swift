@@ -19,9 +19,12 @@ class addEvent {
     var location: String
     var category: String
     var datetime: String
+    var eventPlaceName: String
+    var host: String
+    var imageUrl: String
     
     
-    init(image: UIImage, title: String, description: String, location: String, category: String, datetime: String) {
+    init(image: UIImage, title: String, description: String, location: String, category: String, datetime: String, eventPlaceName: String, host: String, imageUrl: String) {
         
         self.image = image
         self.title = title
@@ -29,6 +32,9 @@ class addEvent {
         self.location = location
         self.category = category
         self.datetime = datetime
+        self.eventPlaceName = eventPlaceName
+        self.host = host
+        self.imageUrl = imageUrl
         
     }
     

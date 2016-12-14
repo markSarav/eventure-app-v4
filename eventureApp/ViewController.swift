@@ -83,6 +83,7 @@ class ViewController: UIViewController {
                 return
             }
             
+            
             // save user to database
             let ref = FIRDatabase.database().reference()
             let usersReference = ref.child("Users").child(uid)
@@ -111,7 +112,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-      
+       print("THE CURRENT \(FIRAuth.auth()?.currentUser?.email)")
     }
     
 

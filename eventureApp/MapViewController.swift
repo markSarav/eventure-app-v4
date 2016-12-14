@@ -71,8 +71,11 @@ class MapViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let uploadImgVC = (segue.destination as! UploadImageTableViewController)
+        if segue.identifier == "addEventSegue" {
+            let uploadImgVC = (segue.destination as! UploadImageTableViewController)
+        }
     }
+
     
 }
 

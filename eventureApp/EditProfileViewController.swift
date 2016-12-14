@@ -15,6 +15,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var age: UITextField!
     
     @IBAction func submit(_ sender: Any) {
         let storageRef = FIRStorage.storage().reference().child("avatar.png")
@@ -42,6 +43,20 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let uid = FIRAuth.auth()?.currentUser?.uid
         FIRDatabase.database().reference().child("Users/"+uid!+"/firstName").setValue(firstName.text)
         FIRDatabase.database().reference().child("Users/"+uid!+"/lastName").setValue(lastName.text)
+        
+        FIRDatabase.database().reference().child("Users/"+uid!+"/age").setValue(age.text)
+        
+        
+        let flashMessageController = UIAlertController(title: "Eventure", message: "Successfully Updated Profile", preferredStyle: UIAlertControllerStyle.alert)
+        flashMessageController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        self.present(flashMessageController, animated: true, completion: nil)
+        
+        
+        firstName.text = ""
+        lastName.text = ""
+        age.text = ""
+
+        
     }
 
     

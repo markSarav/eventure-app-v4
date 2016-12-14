@@ -10,6 +10,7 @@ import UIKit
 
 import UIKit
 import FirebaseStorage
+import FirebaseAuth
 
 class UploadImageTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -120,7 +121,7 @@ class UploadImageTableViewController: UITableViewController, UIImagePickerContro
             
             var event: addEvent
             let eventInfoVC = (segue.destination as! EventInfoTableViewController)
-            event = addEvent(image: imageToSend, title: "", description: "", location: "", category: "", datetime: "")
+            event = addEvent(image: imageToSend, title: "", description: "", location: "", category: "", datetime: "", eventPlaceName: "", host: (FIRAuth.auth()?.currentUser?.uid)!,imageUrl: "")
             print("THE EVENTS IMAGE IS \(event.image)")
             eventInfoVC.eventObject = event
             
