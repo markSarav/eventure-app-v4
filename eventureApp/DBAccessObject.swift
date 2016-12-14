@@ -21,6 +21,8 @@ import Foundation
 
 class DBAccessObject {
     
+    var myUserId = FIRAuth.auth()?.currentUser?.uid
+    
     var DBReference: FIRDatabaseReference
     
     init(DBAccessObj: FIRDatabaseReference) {
@@ -28,7 +30,7 @@ class DBAccessObject {
         self.DBReference = DBAccessObj.database.reference()
     }
     
-    private var roomref = FIRDatabase.database().reference()
+    private var roomref = FIRDatabase.database().reference().child("rooms")
     var roomRef: FIRDatabaseReference{
         return roomref
     }
@@ -38,11 +40,17 @@ class DBAccessObject {
     
     
     
-    var fileURL: String!
     
+    private var messageref = FIRDatabase.database().reference().child("rooms").child("messages")
+    
+    
+    
+    var fileURL: String!
+    var idRoom: FIRDatabaseReference!
 
     
-    func CreateNewRoom(user: FIRUser, caption: String, data: NSData){
+    func CreateNewRoom(user: FIRUser, caption: String, data: NSData, messages: NSMutableArray){
+        let roomChild = DBReference.child("rooms").childByAutoId()
         let filePath = "\(user.uid)/\(Int(NSDate.timeIntervalSinceReferenceDate))"
         let metaData = FIRStorageMetadata()
         metaData.contentType = "image/png"
@@ -53,19 +61,49 @@ class DBAccessObject {
             }
             self.fileURL = metadata!.downloadURLs![0].absoluteString
             if let user = FIRAuth.auth()?.currentUser {
-                let idRoom = self.DBReference.child("rooms").childByAutoId()
-                idRoom.setValue(["caption": caption, "thumbnailURLFromStorage":self.DBReference.child(metadata!.path!).description(),"fileUrl":self.fileURL])
+//                roomChild.setValue(["caption": caption, "thumbnailURLFromStorage":self.DBReference.child(metadata!.path!).description(),"fileUrl":self.fileURL, "messages": ])
+                let userMessages: NSMutableArray = [""]
+                roomChild.child("caption").setValue(caption)
+                roomChild.child("thumbnailURLFromStorage").setValue((metadata!.path!).description)
+                roomChild.child("fileUrl").setValue(self.fileURL)
+                roomChild.child("messages").child((FIRAuth.auth()?.currentUser?.uid)!).child("user_sent_messages").setValue(userMessages)
             }
         }
     }
     
-    func fetchDataFromServer(callback: @escaping (Room) -> ()) {
+    func CreateNewMessage(userId: String, roomId: FIRDatabaseReference, textMessage: String){
         let ref: FIRDatabaseReference = FIRDatabase.database().reference()
         let db = DBAccessObject(DBAccessObj: ref)
-        db.roomRef.observe(.childAdded, with: { (snapshot) in
-            let room = Room(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>)
-            callback(room)
-        })
+        let idMessage = ref.child("rooms").child("-KYv-LTSxJrNRW1xf4li").child("messages").child("uletlXNzwfNJJKMPH9uHjpDn1p22").child("user_sent_messages").child("0")
+        
+
+        idMessage.child(myUserId!).setValue(textMessage)
+        
+    }
+    
+    
+    
+    func fetchDataFromServer() {
+        
+//        let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+//        let roomRef = ref.child("rooms").observe(FIRDataEventType.value, with: { (snapshot) in
+//            
+//            let value = snapshot.value as? NSDictionary
+//            let roomId = snapshot.key
+//            let caption = value?["caption"] as! String
+//            let fileURL = value?["fileUrl"] as! String
+//            let thumbnailURLFromStorage = value?["thumbnailURLFromStorage"] as! String
+//            
+//            let roomFromServer = addRoom(caption: caption, thumbnail: thumbnailURLFromStorage, id: roomId, fileUrl: fileURL)
+//            
+//            
+//            let collectionVC = RoomCollectionViewController()
+//            collectionVC.roomFromServer = roomFromServer
+            
+            
+        //})
+        
+        
     }
 
     // adds an event to the db
@@ -95,3 +133,14 @@ class DBAccessObject {
     
    
 }
+
+//        let ref: FIRDatabaseReference = FIRDatabase.database().reference().child("rooms")
+//        let db = DBAccessObject(DBAccessObj: ref)
+//        db.roomRef.observe(.childAdded, with: { (snapshot) in
+//
+//            let value = snapshot.value as? NSDictionary
+//            print("THE VALUE IS \(value)")
+//
+//            let room = Room(key: snapshot.key, snapshot: (snapshot.value as! NSDictionary) as! Dictionary<String, AnyObject>)
+//            callback(room)
+

@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseStorage
+import FirebaseDatabase
 
 class RoomCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbnailPhoto: UIImageView!
     
     @IBOutlet weak var captionLBL: UILabel!
+    
+    
+    // need help here grabbing the right caption and fileURLFromStorage to put for the chatroom logo
     
     func configureCell(room: Room){
         self.captionLBL.text = room.caption

@@ -17,7 +17,6 @@ import Foundation
 class User {
     
     // instance variables for the user class
-    var chatrooms: Array<Chatroom>
     let id_number: String
     var first_name: String
     var last_name: String
@@ -28,8 +27,7 @@ class User {
     var eventsAttended: Array<Event>
     var messages : Array<Message>
    
-    init(chatRm: Array<Chatroom>, idNum: String, firstName: String, lastName: String, user_age: Int, user_fb_id: String, user_twitter: String, user_occupation: String, usr_events_attended: Array<Event>, usr_messages: Array<Message>) {
-        self.chatrooms = chatRm
+    init( idNum: String, firstName: String, lastName: String, user_age: Int, user_fb_id: String, user_twitter: String, user_occupation: String, usr_events_attended: Array<Event>, usr_messages: Array<Message>) {
         self.id_number = idNum
         self.first_name = firstName
         self.last_name = lastName
@@ -44,12 +42,6 @@ class User {
     /***** Functions for a user object *****/
     
     // Getter functions for the user class.
-    
-    func getChatRooms() -> Array<Chatroom> {
-        // returns an array of chatrooms that a user is apart of
-        return chatrooms
-        
-    }
     
     func getUserIDNumber() -> String {
         // returns a users id number

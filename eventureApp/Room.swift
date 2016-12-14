@@ -14,10 +14,12 @@ class Room{
     var caption: String!
     var thumbnail: String!
     var id: String!
+    var fileUrl: String!
     
     init(key: String, snapshot: Dictionary<String, AnyObject>){
         self.id = key
-        self.caption = snapshot["caption"] as! String
-        self.thumbnail = snapshot["thumbnailUrlFromStorage"] as! String
+        self.caption = snapshot["caption"] as? String
+        self.thumbnail = snapshot["tumbnailURLFromStorage"] as? String
+        self.fileUrl = snapshot["fileUrl"] as? String
     }
 }
